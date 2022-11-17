@@ -1,1 +1,17 @@
-<p>sidenav works!</p>
+<ul>
+    <li (click)="changeSidenav()"><a><mat-icon aria-hidden="false" aria-label="Example home icon">menu</mat-icon></a></li>
+</ul>
+
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav class="sidenav" [opened]="sidenavIsOpen" mode="side">
+        <mat-nav-list>
+            <mat-list-item role="navigation" routerLink="profile">Profile</mat-list-item>
+            <mat-list-item role="navigation" routerLink="orders">My Waifus</mat-list-item>
+            <mat-list-item role="navigation" routerLink="store">Waifus Store</mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

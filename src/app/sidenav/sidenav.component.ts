@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent {
+  sidenavIsOpen: boolean = true;
 
+  constructor() { }
+
+  changeSidenav(){
+    this.sidenavIsOpen = !this.sidenavIsOpen;
+  }
 }
