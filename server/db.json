@@ -1,0 +1,19 @@
+{
+    "videogames": [
+        {
+            "id": "1",
+            "name": "Battlefield 2042",
+            "image": "https://ezq760.a2cdn1.secureserver.net/wp-content/uploads/2021/10/P4J459.jpg?time=1668651077",
+            "rarity": "GOLD",
+            "price": 300
+        },
+        {
+            "id": "2",
+            "name": "Assassins Creed Valhalla",
+            "image": "https://ezq760.a2cdn1.secureserver.net/wp-content/uploads/2020/10/P4J430-1.jpg?time=1668651077",
+            "rarity": "SILVER",
+            "price": 400
+        }
+    ],
+    "videogamesOrdered": []
+}
