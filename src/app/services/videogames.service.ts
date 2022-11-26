@@ -43,4 +43,8 @@ export class VideogamesService {
     return this.http.post<Videogame>(this.basePath, JSON.stringify(item), this.httpOptions)
     .pipe(retry(2), catchError(this.handleError));
   }
+  update(id: number, item: Videogame): Observable<Videogame> {
+    return this.http.put<Videogame>(`${this.basePath}/${id}`,JSON.stringify(item), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
 }

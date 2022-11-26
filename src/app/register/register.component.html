@@ -27,3 +27,41 @@
     </div> 
     <button [disabled]="!gameForm.valid" mat-flat-button color="primary" type="submit">Register</button>
 </form>
+<br>
+<hr>
+<br>
+<form #gameForm2="ngForm" [formGroup]="registerForm2" (ngSubmit)="update()">
+    <div class="example-container">
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Id Game</mat-label>
+            <input matInput type="number" placeholder="1" formControlName="id" required>
+            <mat-error *ngIf="id?.errors?.['required']">Enter a name</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Name Game</mat-label>
+            <input matInput placeholder="Uncharted" formControlName="name" required>
+            <mat-error *ngIf="name2?.errors?.['required']">Enter a name</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+            <mat-label>Image Game</mat-label>
+            <input matInput placeholder="url:image" formControlName="image" required>
+            <mat-error *ngIf="image2?.errors?.['required']">Enter a image</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+            <mat-label>Rarity Game</mat-label>
+            <input matInput placeholder="silver" formControlName="rarity" required>
+            <mat-error *ngIf="rarity2?.errors?.['required']">Enter a rarity</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+            <mat-label>Price Game</mat-label>
+            <input matInput placeholder="128" formControlName="price" required>
+            <mat-error *ngIf="price2?.errors?.['required']">Enter a price</mat-error>
+        </mat-form-field>
+    </div> 
+    <button [disabled]="!gameForm2.valid" mat-flat-button color="primary" type="submit">Update</button>
+</form>

@@ -9,10 +9,10 @@
     },
     {
       "id": 2,
-      "name": "Battlefield 2042",
+      "name": "Battlerlfield 2",
       "image": "https://ezq760.a2cdn1.secureserver.net/wp-content/uploads/2021/10/P4J459.jpg?time=1668651077",
-      "rarity": "GOLD",
-      "price": 300
+      "rarity": "gold",
+      "price": "170"
     },
     {
       "id": 3,
