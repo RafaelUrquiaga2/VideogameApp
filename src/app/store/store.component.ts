@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Videogame } from '../models/videogame';
 import { VideogameOrdered } from '../models/videogame-ordered';
+import { GaleryService } from '../services/galery.service';
 import { VideogamesService } from '../services/videogames.service';
 
 @Component({
@@ -12,8 +14,10 @@ export class StoreComponent implements OnInit{
   videogame: Videogame;
   videogames: Videogame[] = [];
   videogameOrdered: VideogameOrdered;
+  videogame$: Observable<Videogame> | undefined;
 
-  constructor(private videogamesService: VideogamesService) {
+
+  constructor(private videogamesService: VideogamesService, private videogameOrderedService: GaleryService) {
     this.videogame = {} as Videogame;
     this.videogameOrdered = {} as VideogameOrdered;
    }
@@ -27,24 +31,39 @@ export class StoreComponent implements OnInit{
   }
 
   getVideogameById(id: string) {
+    /*
     this.videogamesService.getById(id).subscribe((response: Videogame) => {
       this.videogameOrdered.videogameId = response.id;
       this.videogameOrdered.image = response.image;
       this.videogameOrdered.name = response.name;
       this.videogameOrdered.price = response.price;
       this.videogameOrdered.rarity = response.rarity;
+    });
+    */
+    this.videogame$ = this.videogamesService.getById(id);
+
+    this.videogame$.subscribe((value: Videogame) => {
+      this.videogameOrdered.videogameId = 2;
+      this.videogameOrdered.image = value.image;
+      this.videogameOrdered.name = value.name;
+      this.videogameOrdered.price = value.price;
+      this.videogameOrdered.rarity = value.rarity;
     })
 
-    //console.log(this.buyedWaifu);
+    //console.log(this.videogameOrdered);
   }
-/*
-  addVideogameToUser(id: string){
-    this.getVideogameById(id);
-    //this.waifuService.create(this.buyedWaifu).subscribe((response:any) => {this.domestic$ = response;});
-    //this.waifuService.create(this.buyedWaifu);
-    //this.buyedWaifu.id="0";
-    this.videogamesService.create(this.videogameOrdered).subscribe(response => {alert("Order registered");});
-    //console.log(this.buyedWaifu);
+
+  addVideogameToGalery(newGaleryGame: Videogame) {
+    //this.getVideogameById(id);
+    //console.log(this.videogameOrdered);
+    this.videogameOrdered.videogameId = newGaleryGame.id;
+    this.videogameOrdered.image = newGaleryGame.image;
+    this.videogameOrdered.name = newGaleryGame.name;
+    this.videogameOrdered.price = newGaleryGame.price;
+    this.videogameOrdered.rarity = newGaleryGame.rarity;
+    console.log(newGaleryGame);
+    this.videogameOrderedService.create(this.videogameOrdered).subscribe(response => { alert("Order registered"); });
   }
-  */
+
+
 }

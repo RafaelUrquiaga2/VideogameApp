@@ -1,19 +1,65 @@
 {
-    "videogames": [
-        {
-            "id": "1",
-            "name": "Battlefield 2042",
-            "image": "https://ezq760.a2cdn1.secureserver.net/wp-content/uploads/2021/10/P4J459.jpg?time=1668651077",
-            "rarity": "GOLD",
-            "price": 300
-        },
-        {
-            "id": "2",
-            "name": "Assassins Creed Valhalla",
-            "image": "https://ezq760.a2cdn1.secureserver.net/wp-content/uploads/2020/10/P4J430-1.jpg?time=1668651077",
-            "rarity": "SILVER",
-            "price": 400
-        }
-    ],
-    "videogamesOrdered": []
+  "videogames": [
+    {
+      "name": "Mario",
+      "image": "https://i.linio.com/p/af9368be21f7eefa48546574a49854fd-product.webp",
+      "rarity": "Silver",
+      "price": "456",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "Battlefield 2042",
+      "image": "https://ezq760.a2cdn1.secureserver.net/wp-content/uploads/2021/10/P4J459.jpg?time=1668651077",
+      "rarity": "GOLD",
+      "price": 300
+    },
+    {
+      "id": 3,
+      "name": "Assassins Creed Valhalla",
+      "image": "https://ezq760.a2cdn1.secureserver.net/wp-content/uploads/2020/10/P4J430-1.jpg?time=1668651077",
+      "rarity": "SILVER",
+      "price": 400
+    },
+    {
+      "name": "Kholat",
+      "image": "https://m.media-amazon.com/images/I/81uRiwaTuQL._SL1500_.jpg",
+      "rarity": "Gold",
+      "price": "156",
+      "id": 4
+    },
+    {
+      "name": "Fifa23",
+      "image": "https://i.linio.com/p/432658ee2d0f5e07f66acdd4f7e1b698-product.webp",
+      "rarity": "Gold",
+      "price": "789",
+      "id": 5
+    }
+  ],
+  "videogamesOrdered": [
+    {
+      "videogameId": "2",
+      "image": "https://ezq760.a2cdn1.secureserver.net/wp-content/uploads/2020/10/P4J430-1.jpg?time=1668651077",
+      "name": "Assassins Creed Valhalla",
+      "price": 400,
+      "rarity": "SILVER",
+      "id": 10
+    },
+    {
+      "videogameId": 5,
+      "image": "https://i.linio.com/p/432658ee2d0f5e07f66acdd4f7e1b698-product.webp",
+      "name": "Fifa23",
+      "price": "789",
+      "rarity": "Gold",
+      "id": 12
+    },
+    {
+      "videogameId": 1,
+      "image": "https://i.linio.com/p/af9368be21f7eefa48546574a49854fd-product.webp",
+      "name": "Mario",
+      "price": "456",
+      "rarity": "Silver",
+      "id": 13
+    }
+  ]
 }

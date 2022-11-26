@@ -1,0 +1,29 @@
+<form #gameForm="ngForm" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="example-container">
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Name Game</mat-label>
+            <input matInput placeholder="Uncharted" formControlName="name" required>
+            <mat-error *ngIf="name?.errors?.['required']">Enter a name</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+            <mat-label>Image Game</mat-label>
+            <input matInput placeholder="url:image" formControlName="image" required>
+            <mat-error *ngIf="image?.errors?.['required']">Enter a image</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+            <mat-label>Rarity Game</mat-label>
+            <input matInput placeholder="silver" formControlName="rarity" required>
+            <mat-error *ngIf="rarity?.errors?.['required']">Enter a rarity</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+            <mat-label>Price Game</mat-label>
+            <input matInput placeholder="128" formControlName="price" required>
+            <mat-error *ngIf="price?.errors?.['required']">Enter a price</mat-error>
+        </mat-form-field>
+    </div> 
+    <button [disabled]="!gameForm.valid" mat-flat-button color="primary" type="submit">Register</button>
+</form>

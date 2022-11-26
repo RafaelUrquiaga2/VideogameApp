@@ -1,0 +1,29 @@
+mat-grid-tile{
+    border: 1px solid black;
+}
+
+.example-card {
+    max-height: 400px;
+    max-width: 300px;
+}
+
+.button-buy{
+    width: 100%;
+    background-color: lightcoral;
+}
+
+.image-waifu{
+    max-width: 300px;
+    max-height: 200px;
+    text-align: center;
+    object-fit: cover
+}
+
+mat-card-header{
+    width: 100%;
+}
+
+mat-card-title{
+    max-width: 250px;
+    overflow: hidden
+}

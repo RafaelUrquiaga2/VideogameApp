@@ -1,9 +1,10 @@
 import { Rarity } from "../shared/enums/rarity";
 
 export interface Videogame {
-    id: string;
+    id: number;
     name: string;
     image: string;
-    rarity: Rarity;
+    //rarity: Rarity;
+    rarity: string;
     price: number;
 }

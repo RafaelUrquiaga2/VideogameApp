@@ -1,10 +1,11 @@
 import { Rarity } from "../shared/enums/rarity";
 
 export interface VideogameOrdered {
-    id: string;
-    videogameId: string;
+    id: number;
+    videogameId: number;
     name: string;
     image: string;
-    rarity: Rarity;
+    //rarity: Rarity;
+    rarity: string;
     price: number;
 }

@@ -11,11 +11,11 @@
                 <ul>
                     <li>Price: S/ {{videogame.price}}</li>
                     <li>Rarity: {{videogame.rarity}}</li>
-                </ul>
+                </ul>   
             </mat-card-content>
             <mat-card-actions>
                 <!--<button mat-button class="button-buy" (click)="addVideogameToUser(videogame.id)">BUY</button>-->
-                <button mat-button class="button-buy">BUY</button>
+                <button mat-button class="button-buy" (click)="addVideogameToGalery(videogame)">BUY</button>
             </mat-card-actions>
         </mat-card>
     </mat-grid-tile>

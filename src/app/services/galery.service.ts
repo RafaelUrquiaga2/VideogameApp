@@ -1,14 +1,14 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
-import { Videogame } from '../models/videogame';
+import { VideogameOrdered } from '../models/videogame-ordered';
 
 @Injectable({
   providedIn: 'root'
 })
-export class VideogamesService {
+export class GaleryService {
 
-  basePath = 'http://localhost:3000/api/v1/videogames';
+  basePath = 'http://localhost:3000/api/v1/videogamesOrdered';
 
   httpOptions={
     headers: new HttpHeaders({
@@ -30,17 +30,23 @@ export class VideogamesService {
     return throwError(() => new Error('Something happened with request, please try again later'));
   }
 
-  getAll():Observable<Videogame[]>{
-    return this.http.get<Videogame[]>(this.basePath, this.httpOptions)
+  getAll():Observable<VideogameOrdered[]>{
+    return this.http.get<VideogameOrdered[]>(this.basePath, this.httpOptions)
     .pipe(retry(2), catchError(this.handleError));
   }
 
-  getById(id:string):Observable<Videogame>{
-    return this.http.get<Videogame>(`${this.basePath}/${id}`, this.httpOptions)
+  getById(id:string):Observable<VideogameOrdered>{
+    return this.http.get<VideogameOrdered>(`${this.basePath}/${id}`, this.httpOptions)
     .pipe(retry(2), catchError(this.handleError));
   }
-  create(item: Videogame): Observable<Videogame>{
-    return this.http.post<Videogame>(this.basePath, JSON.stringify(item), this.httpOptions)
+
+  create(item: VideogameOrdered): Observable<VideogameOrdered>{
+    return this.http.post<VideogameOrdered>(this.basePath, JSON.stringify(item), this.httpOptions)
+    .pipe(retry(2), catchError(this.handleError));
+  }
+
+  delete(id:any){
+    return this.http.delete(`${this.basePath}/${id}`, this.httpOptions)
     .pipe(retry(2), catchError(this.handleError));
   }
 }
